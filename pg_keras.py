@@ -93,7 +93,7 @@ if __name__ == "__main__":
     state_size = 80 * 80
     action_size = env.action_space.n
     agent = PGAgent(state_size, action_size)
-    if os.path.isfile('pong_new.h5'): agent.load('pong_new.h5')
+    if os.path.isfile('pong_keras.h5'): agent.load('pong_keras.h5')
     while True:
         #env.render()
 
@@ -114,4 +114,4 @@ if __name__ == "__main__":
             state = env.reset()
             prev_x = None
             if episode > 1 and episode % 10 == 0:
-                agent.save('pong_new.h5')
+                agent.save('pong_keras.h5')
